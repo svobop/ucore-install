@@ -34,6 +34,12 @@ Merge credentials with autorebase example and create ignition file
 yq -n 'load("ucore-autorebase.butane") * load("ucore-passwd.butane")' | butane > ucore-autorebase.ign
 ```
 
+Alternatively, use add_credentials script
+
+```bash
+./add_credentials.sh ucore-autorebase.butane | butane > ucore-autorebase.ign
+```
+
 Embed ignition file into iso (just for liveiso not install)
 ```bash
 coreos-installer iso ignition embed -i ucore-autorebase.ign fedora-coreos-
